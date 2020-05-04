@@ -1,0 +1,26 @@
+/Tower of Hanoi program 
+#include<iostream>
+using namespace std;
+void moveDiscs(int n,char peg1, char peg2,char peg3)
+{
+  if(n==1)
+  {
+
+   cout<<"\nMove Disk "<<n<<" from "<<peg1<<" to "<<peg3<<endl;
+
+        return;
+        }              
+ moveDiscs(n-1,peg1,peg2,peg3);
+ cout<<"\n\nMove Disk "<<n<<" from "<<peg1<<" to "<<peg3<<endl;
+  moveDiscs(n-1,peg1,peg2,peg3);
+}
+
+int main()
+
+{
+ int n;
+ cout<<"Enter no. of disks:";        
+ cin>>n;
+ moveDiscs(n,'A','B','C');
+ return 0;
+}
